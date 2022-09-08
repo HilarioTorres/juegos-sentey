@@ -4,7 +4,11 @@
 }
 
 .centrar{
-  margin-left: 20%;
+  margin-left: 25%;
 } 
 /* Mas adelante lo voy a centrar bien, por ahora lo dejo asi */
+
+.tamaño-Imagen{
+  height: 4.12rem;
+}
 

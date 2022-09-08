@@ -1,5 +1,7 @@
 import React from 'react';
-import "./App.css"
+import './App.css'
+import juegosSenteyLOGO from './pictures/juegosSenteyLOGO.png';
+
 const App = () => {
   return (
     <div>
@@ -7,9 +9,7 @@ const App = () => {
         <div className="container-fluid ">
           <div className="collapse navbar-collapse a" id="navbarTogglerDemo01">
             <div>
-              <h1 className="padding-logo navbar-nav">
-                Juegos sentey
-              </h1>
+              <img className="tamaño-Imagen" src={juegosSenteyLOGO} alt="" />
             </div>
             <div className="centrar">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
