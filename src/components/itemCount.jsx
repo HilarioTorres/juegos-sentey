@@ -39,7 +39,7 @@ const ItemCount = (juego) =>{
     }
 
 return(
-    <div className="d-flex justify-content-center gap-3">
+    <div className="d-flex justify-content-center gap-3 align-items-baseline">
         <button onClick={aumentar} type="button" className="btn btn-outline-primary">+</button>
         <p>{stockParaCarrito}</p>
         <button onClick={disminuir} type="button" className="btn btn-outline-primary">-</button>
