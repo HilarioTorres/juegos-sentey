@@ -12,3 +12,46 @@
 body{
     background-color: #dfe9fd;
 }
+
+.tamañoImagenDetail{
+    height: 50rem;
+    width: auto;
+    grid-area: imagen;
+}
+
+.gridDetailItems{
+    display:  grid;
+    margin: 10px;
+    grid-template-areas: 
+    "imagen titulo"
+    "imagen descripcion"
+    "imagen stock"
+    "imagen precio"
+    "imagen carrito";
+    justify-items: start;
+    align-items: center;
+}
+
+.tituloItemDetail{
+    grid-area: titulo;
+}
+
+.descripcionItemDetail{
+    grid-area: descripcion;
+}
+
+.stockItemDetail{
+    grid-area: stock;
+}
+
+.precioItemDetail{
+    grid-area: precio;
+}
+
+.añadirCarritoItemDetail{
+    grid-area: carrito;
+}
+
+.divPaddingLeft{
+    padding-left: 4vh;
+}
