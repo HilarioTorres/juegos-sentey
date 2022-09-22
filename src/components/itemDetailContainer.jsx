@@ -1,41 +1,39 @@
-import React, { useEffect, useState } from "react";
-import juegos from "../utils/dataBase";
-import ItemList from "./itemList";
+import { useEffect, useState } from "react";
 import alertaCargando from "../utils/alertaCargando";
-
+import juegos from "../utils/dataBase";
+import ItemDetail from "./itemDetail";
 
 
 const promesaMostrarJuegos = () =>{
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            resolve(juegos);
+            resolve(juegos[0]);
             reject("Error en la const promesaMostrarJuegos")
         }, 2000)
     })
 }
 
-
-const ItemListContainer = (props) => {
-    const[arrayList, setArrayList] = useState([]);
+const ItemDetailContainer = (props) => {
+    const[datoProducto, setdatoProducto] = useState({});
     const[loading, setLoading] = useState(false);
 
     useEffect(()=>{
         setLoading(true);
         promesaMostrarJuegos()
-        .then((response) => setArrayList(response))
+        .then((response) => setdatoProducto(response))
         .catch((err) => console.error (err))
         .finally(()=> setLoading(false))
     }, [])
-    console.log(arrayList)
+    console.log(datoProducto)
     return(
         <div>
-            <h1>Hola {props.greeting}</h1>
-            <div className="grid-Items"> 
-            {loading ? alertaCargando() : <ItemList juegos={arrayList} />}
+            <div> 
+            {loading ? alertaCargando() : <ItemDetail juegos={datoProducto} />}
                 
             </div>
         </div>
 
     );
 }
-export default ItemListContainer;
+
+export default ItemDetailContainer;

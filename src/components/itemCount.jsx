@@ -1,18 +1,41 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
-const ItemCount = () =>{
+const ItemCount = (juego) =>{
     const [stockParaCarrito, setstockParaCarrito] = useState (0);
 
+    
     const aumentar = () =>{
-        setstockParaCarrito(stockParaCarrito+1);
+        if (stockParaCarrito <= 9) {
+            setstockParaCarrito(stockParaCarrito+1);
+        }else{            
+            Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Stock insuficiente',
+        })}
+        
     }
 
     const disminuir = () =>{
-        setstockParaCarrito(stockParaCarrito-1);
+        if (stockParaCarrito >= 1) {
+            setstockParaCarrito(stockParaCarrito - 1);
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No puede disminuir el carrito',
+            })
+        }
     }
 
     const alerta = () =>{
-        alert ("Se añadio al carrito")
+        Swal.fire(
+            'Se añadio al carrito',
+            'Disfrute de su compra',
+            'success'
+            )
+        setstockParaCarrito(0)
     }
 
 return(

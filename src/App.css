@@ -1,0 +1,14 @@
+.grid-Items{
+    display:  grid;
+    gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    margin-left: 10px;
+}
+
+.tamaño-Imagen-Catalogo{
+    height: 28rem;
+}
+
+body{
+    background-color: #dfe9fd;
+}

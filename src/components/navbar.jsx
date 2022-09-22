@@ -12,13 +12,13 @@ const NavBar = () => {
                 <div className="centrar">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="navbar-brand" href="#">Categoria 1</a>
+                            <a className="navbar-brand" href="https://plataforma.coderhouse.com/cursos">Categoria 1</a>
                         </li>
                         <li className="nav-item">
-                            <a className="navbar-brand" href="#">Categoria 2</a>
+                            <a className="navbar-brand" href="https://plataforma.coderhouse.com/cursos">Categoria 2</a>
                         </li>
                         <li className="nav-item">
-                            <a className="navbar-brand" href="#">Categoria 3</a>
+                            <a className="navbar-brand" href="https://plataforma.coderhouse.com/cursos">Categoria 3</a>
                         </li>
                     </ul>
                 </div>
