@@ -2,21 +2,22 @@ import { useEffect, useState } from "react";
 import alertaCargando from "../utils/alertaCargando";
 import juegos from "../utils/dataBase";
 import ItemDetail from "./itemDetail";
+import { useParams } from "react-router-dom";
 
 
-const promesaMostrarJuegos = () =>{
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            resolve(juegos[0]);
-            reject("Error en la const promesaMostrarJuegos")
-        }, 2000)
-    })
-}
 
 const ItemDetailContainer = (props) => {
     const[datoProducto, setdatoProducto] = useState({});
     const[loading, setLoading] = useState(false);
-
+    const{ id } = useParams();
+    const promesaMostrarJuegos = () =>{
+        return new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve(juegos.find(producto => producto.id === parseInt(id)));
+                reject("Error en la const promesaMostrarJuegos")
+            }, 2000)
+        })
+    }
     useEffect(()=>{
         setLoading(true);
         promesaMostrarJuegos()
